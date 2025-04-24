@@ -1,0 +1,139 @@
+Creating test database for alias 'default'...
+Found 88 test(s).
+System check identified no issues (0 silenced).
+E..EE...............F..................................EEEEEEEEE........................
+======================================================================
+ERROR: models (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: models
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 470, in _find_test_path
+    package = self._get_module_from_name(name)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/models/__init__.py", line 1, in <module>
+    from .user import RegisteredUser, Administrator, Guest
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/models/user.py", line 45, in <module>
+    class RegisteredUser(AbstractBaseUser, PermissionsMixin):
+  File "/Users/erayyuklu/Library/Python/3.9/lib/python/site-packages/django/db/models/base.py", line 134, in __new__
+    raise RuntimeError(
+RuntimeError: Model class models.user.RegisteredUser doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+
+
+======================================================================
+ERROR: test_bookmark_getters (tests.test_bookmark_models.BookmarkModelTests)
+Test bookmark getter methods
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_bookmark_models.py", line 72, in test_bookmark_getters
+    self.assertEqual(self.bookmark.get_tags().count(), 0)
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/models/bookmark.py", line 47, in get_tags
+    return self.tags.all()
+AttributeError: 'Bookmark' object has no attribute 'tags'
+
+======================================================================
+ERROR: test_bookmark_tags (tests.test_bookmark_models.BookmarkModelTests)
+Test adding tags to bookmarks
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_bookmark_models.py", line 128, in test_bookmark_tags
+    self.bookmark.add_tag(self.tag1)
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/models/bookmark.py", line 71, in add_tag
+    self.tags.add(tag)
+AttributeError: 'Bookmark' object has no attribute 'tags'
+
+======================================================================
+ERROR: test_complex_search (tests.test_search_class.SearchClassTests)
+Test combined search with multiple criteria
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_filter_by_rating (tests.test_search_class.SearchClassTests)
+Test filtering users by rating
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_search_by_category (tests.test_search_class.SearchClassTests)
+Test searching tasks by category
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_search_by_keyword (tests.test_search_class.SearchClassTests)
+Test searching tasks by keyword
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_search_by_location (tests.test_search_class.SearchClassTests)
+Test searching tasks by location
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_search_by_tags (tests.test_search_class.SearchClassTests)
+Test searching tasks by tags
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_search_users (tests.test_search_class.SearchClassTests)
+Test searching users
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_sort_by_deadline (tests.test_search_class.SearchClassTests)
+Test sorting tasks by deadline
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+ERROR: test_sort_by_proximity (tests.test_search_class.SearchClassTests)
+Test sorting tasks by proximity to location
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_search_class.py", line 13, in setUp
+    self.user1 = RegisteredUser.objects.create_user(
+TypeError: create_user() got an unexpected keyword argument 'rating'
+
+======================================================================
+FAIL: test_complete_task_workflow (tests.test_integration.TaskWorkflowIntegrationTests)
+Test a complete task workflow from creation to completion
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/erayyuklu/Documents/bounswe2025group8/practice-app/backend/core/tests/test_integration.py", line 103, in test_complete_task_workflow
+    self.assertEqual(volunteer_notifications.count(), 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 88 tests in 20.897s
+
+FAILED (failures=1, errors=12)
+Destroying test database for alias 'default'...
