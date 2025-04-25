@@ -1,0 +1,36 @@
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+.......................................................................................E
+======================================================================
+ERROR: models (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: models
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/unittest/loader.py", line 470, in _find_test_path
+    package = self._get_module_from_name(name)
+  File "/usr/local/lib/python3.9/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/app/core/models/__init__.py", line 1, in <module>
+    from .user import RegisteredUser, Administrator, Guest
+  File "/app/core/models/user.py", line 45, in <module>
+    class RegisteredUser(AbstractBaseUser, PermissionsMixin):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 161, in __new__
+    new_class.add_to_class(obj_name, obj)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 326, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/related.py", line 1635, in contribute_to_class
+    self.remote_field.through = create_many_to_many_intermediary_model(self, cls)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/related.py", line 1104, in create_many_to_many_intermediary_model
+    return type(name, (models.Model,), {
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 321, in __new__
+    new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 228, in register_model
+    raise RuntimeError(
+RuntimeError: Conflicting 'registereduser_groups' models in application 'core': <class 'core.models.user.RegisteredUser_groups'> and <class 'models.user.RegisteredUser_groups'>.
+
+
+----------------------------------------------------------------------
+Ran 88 tests in 6.976s
+
+FAILED (errors=1)
+Destroying test database for alias 'default'...
